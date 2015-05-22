@@ -62,7 +62,9 @@ def treegeneration(AlteryxFileName):
                 pass
     
     mydfv = pd.DataFrame(mydf)
-    mydfv2 = mydfv.T    
+    mydfv2 = mydfv.T 
+    columns = ['Function','Field','Expression']
+    mydfv2 = mydfv2[columns]  
     return mydfv2
 
 
@@ -70,4 +72,4 @@ if __name__ == '__main__':
     AlteryxFileName = sys.argv[1]
     outputcsv = sys.argv[2]
     mydfv2 = treegeneration(AlteryxFileName)
-    mydfv2.to_csv(outputcsv)
+    mydfv2.to_csv(outputcsv,index=False)
